@@ -1,0 +1,42 @@
+
+ML-BASED URL THREAT DETECTION SYSTEM
+
+SELECTED MODEL:
+Logistic Regression
+
+COMPARISON MODEL:
+LinearSVC
+
+MODEL PERFORMANCE:
+
+Logistic Regression:
+Accuracy: 99.19%
+Precision: 99.77%
+Recall: 98.94%
+F1 Score: 99.35%
+
+LinearSVC:
+Accuracy: 99.16%
+Precision: 99.79%
+Recall: 98.87%
+F1 Score: 99.33%
+
+WHY LOGISTIC REGRESSION?
+It was selected because it supports probability-based
+risk scoring through predict_proba().
+
+RISK CLASSIFICATION:
+LOW - Low predicted risk
+MEDIUM - Moderate predicted risk
+HIGH - High predicted risk
+
+SOC RESPONSE WORKFLOW (SIMULATED):
+1. Detect suspicious URL.
+2. Generate security alert.
+3. Investigate the URL.
+4. Mark as Blocked (Simulated), if appropriate.
+5. Mark the case as Resolved.
+
+NOTE:
+The SOC response workflow is for demonstration only.
+It does not perform actual website or network blocking.

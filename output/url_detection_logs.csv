@@ -1,0 +1,12 @@
+timestamp,url,status,risk_score,risk_level,alert,url_length,has_https,dot_count,hyphen_count,special_char_count,suspicious_word_count,has_ip,has_at_symbol,subdomain_count,digit_count
+2026-11-15T20:28:31+05:30,htts://www.google.com,MALICIOUS,98.11,HIGH,MALICIOUS_URL_DETECTED,21,0,2,0,0,0,0,0,1,0
+2026-11-15T20:29:09+05:30,https://www.google.com,LEGITIMATE,0.12,LOW,NONE,22,1,2,0,0,0,0,0,1,0
+2026-11-15T20:29:23+05:30,http://secure-login-verify-account.example.com,MALICIOUS,100.0,HIGH,MALICIOUS_URL_DETECTED,46,0,2,3,0,4,0,0,1,0
+2026-11-15T20:29:33+05:30,http://192.0.2.1/login,MALICIOUS,100.0,HIGH,MALICIOUS_URL_DETECTED,22,0,3,0,0,1,1,0,0,6
+2026-11-16T12:38:49+05:30,https://google.com,LEGITIMATE,0.74,LOW,NONE,18,1,1,0,0,0,0,0,0,0
+2026-11-16T12:40:13+05:30,https://free_iphone_spin_-wheel.com,LEGITIMATE,8.22,LOW,NONE,35,1,1,1,3,1,0,0,0,0
+2026-11-16T12:40:43+05:30,http://free_iphone_spin_-wheel.com,MALICIOUS,99.97,HIGH,MALICIOUS_URL_DETECTED,34,0,1,1,3,1,0,0,0,0
+2026-11-16T12:48:25+05:30,https://www.google.com,LEGITIMATE,0.12,LOW,NONE,22,1,2,0,0,0,0,0,1,0
+2026-11-16T12:48:57+05:30,htts://www.google.com,MALICIOUS,98.11,HIGH,MALICIOUS_URL_DETECTED,21,0,2,0,0,0,0,0,1,0
+2026-11-17T14:24:30+05:30,https://www.google.com,LEGITIMATE,0.12,LOW,NONE,22,1,2,0,0,0,0,0,1,0
+2026-11-17T14:24:43+05:30,http://spam.com,MALICIOUS,99.55,HIGH,MALICIOUS_URL_DETECTED,15,0,1,0,0,0,0,0,0,0

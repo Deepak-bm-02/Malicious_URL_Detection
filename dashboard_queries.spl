@@ -1,0 +1,50 @@
+
+# ==========================================
+# CA3 ACTIVITY 2 - URL DETECTION SOC DASHBOARD
+# Splunk index: url_detection
+# ==========================================
+
+# 1. TOTAL URLS ANALYZED
+index=url_detection
+| stats count AS "Total URLs Analyzed"
+
+# 2. MALICIOUS URL COUNT
+index=url_detection status="MALICIOUS"
+| stats count AS "Malicious URLs"
+
+# 3. LEGITIMATE URL COUNT
+index=url_detection status="LEGITIMATE"
+| stats count AS "Legitimate URLs"
+
+# 4. HIGH-RISK ALERT COUNT
+index=url_detection risk_level="HIGH"
+| stats count AS "High-Risk Alerts"
+
+# 5. THREAT CLASSIFICATION - PIE CHART
+index=url_detection
+| stats count AS "URL Count" BY status
+
+# 6. RISK DISTRIBUTION - BAR CHART
+index=url_detection
+| stats count AS "URL Count" BY risk_level
+
+# 7. URL DETECTION TIMELINE - LINE CHART
+index=url_detection
+| eval _time=strptime(timestamp,"%Y-%m-%dT%H:%M:%S%z")
+| timechart span=1m count BY status
+
+# 8. MALICIOUS URL DETAILS - TABLE
+index=url_detection status="MALICIOUS"
+| table timestamp url status risk_score risk_level alert
+| sort - risk_score
+
+# 9. HIGH-RISK ALERT DETAILS - TABLE
+index=url_detection risk_level="HIGH"
+| table timestamp url risk_score risk_level alert
+| sort - risk_score
+
+# 10. FEATURE ANALYSIS
+index=url_detection
+| stats avg(url_length) AS "Average URL Length"
+        avg(suspicious_word_count) AS "Average Suspicious Words"
+        count(eval(has_ip=1)) AS "URLs With IP Address"
